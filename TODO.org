@@ -1,6 +1,8 @@
+* add asdf
+** install quicklisp
+
+* rewrite not/assert using T?
+
 * add for loop
 ** add iter support
 *** list/string/hash table
-
-* extract utils.lisp?
-** import cl

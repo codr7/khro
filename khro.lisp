@@ -1,9 +1,22 @@
 (cl:defpackage khro
   (:import-from cl assert not)
   (:import-from utils do-pairs1 do-pairs2)
-  (:export = + - assert not))
+  (:export = + - assert not T?))
 
 (cl:in-package khro)
+
+(cl:defmethod T? (x)
+  (cl:not (cl:null x)))
+
+(cl:defmethod T? ((x cl:list))
+  (cl:not (cl:null (cl:first x))))
+
+(cl:defmethod T? ((x cl:number))
+  (cl:not (cl:zerop x)))
+
+(cl:defmethod T? ((x cl:string))
+  (cl:not (cl:zerop (cl:length x))))
+
 
 (cl:defmethod = ((x cl:number) cl:&rest args)
   (cl:apply #'cl:= x args))

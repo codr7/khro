@@ -8,5 +8,7 @@
   (assert (= 6 (+ 1 2 3)))
   (assert (= -4 (- 1 2 3)))
   (assert (= "abc" "abc" "abc"))
-  (assert (not (= "abc" "abc" "def"))))
+  (assert (not (= "abc" "abc" "def")))
+  (assert (= '(1 2 3) '(1 2 3)))
+  (assert (not (= '(1 2 3) '(1 2)))))
   

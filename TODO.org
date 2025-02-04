@@ -1,6 +1,3 @@
-* implement = for lists
-** delegate to = for items
-
 * add for loop
 ** add iter support
 *** list/string/hash table

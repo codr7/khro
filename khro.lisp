@@ -1,7 +1,9 @@
+(sb-ext:unlock-package 'common-lisp)
+
 (cl:defpackage khro
-  (:import-from cl assert not)
+  (:import-from cl not)
   (:import-from utils do-pairs1 do-pairs2)
-  (:export = + - assert not T?))
+  (:export = + - check not T?))
 
 (cl:in-package khro)
 
@@ -17,6 +19,9 @@
 (cl:defmethod T? ((x cl:string))
   (cl:not (cl:zerop (cl:length x))))
 
+(cl:defmacro check (cl:&rest conds)
+  `(cl:progn
+     ,@(cl:mapcar (cl:lambda (c) `(cl:assert (khro:T? ,c))) conds)))
 
 (cl:defmethod = ((x cl:number) cl:&rest args)
   (cl:apply #'cl:= x args))

@@ -1,8 +1,8 @@
-* add asdf
-** install quicklisp
-
-* rewrite not/assert using T?
+* reimplement and/or using T?
 
 * add for loop
 ** add iter support
 *** list/string/hash table
+
+(ql:quickload "khro")
+New-Item -Path khro -ItemType SymbolicLink -Value "\\wsl.localhost\Ubuntu\home\codr7\Code\khro"

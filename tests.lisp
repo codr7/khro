@@ -5,24 +5,24 @@
 (cl:in-package khro-tests)
 
 (cl:defun test-T? ()
-  (assert (T? 1))
-  (assert (not (T? 0)))
+  (check (T? 1))
+  (check (not (T? 0)))
   
-  (assert (T? "abc"))
-  (assert (not (T? "")))
+  (check (T? "abc"))
+  (check (not (T? "")))
 
-  (assert (T? '(1 2 3)))
-  (assert (not (T? '()))))
+  (check (T? '(1 2 3)))
+  (check (not (T? '()))))
 
 (cl:defun test= ()
-  (assert (= 6 (+ 1 2 3)))
-  (assert (= -4 (- 1 2 3)))
+  (check (= 6 (+ 1 2 3)))
+  (check (= -4 (- 1 2 3)))
 
-  (assert (= "abc" "abc" "abc"))
-  (assert (not (= "abc" "abc" "def")))
+  (check (= "abc" "abc" "abc"))
+  (check (not (= "abc" "abc" "def")))
 
-  (assert (= '(1 2 3) '(1 2 3)))
-  (assert (not (= '(1 2 3) '(1 2)))))
+  (check (= '(1 2 3) '(1 2 3)))
+  (check (not (= '(1 2 3) '(1 2)))))
   
 (cl:defun run ()
   (test-T?)
